@@ -21,15 +21,20 @@ export class DashboardComponent implements AfterViewInit {
   @ViewChild("mixedChart") mixedChart: UIChart;
 
   hoursByProject = [
-    { id: 1, name: 'Payroll App', hoursSpent: 8 },
-    { id: 2, name: 'Agile Times App', hoursSpent: 16 },
-    { id: 3, name: 'Point of Sale App', hoursSpent: 24 },
+    { id: 1, name: 'Unreached', hoursSpent: 11 },
+    { id: 2, name: 'Tested', hoursSpent: 39 },
+    { id: 3, name: 'Untested', hoursSpent: 50 },
+  ]
+
+  hoursByProject2 = [
+    { id: 1, name: 'Tested', hoursSpent: 1001 },
+    { id: 2, name: 'In Progress', hoursSpent: 58 },
   ]
 
   chartOptions = {
     title: {
       display: true,
-      text: 'Hours By Project'
+      text: 'YTD Tested Percentage'
     },
     legend: {
       position: 'bottom'
@@ -37,8 +42,10 @@ export class DashboardComponent implements AfterViewInit {
   };
 
   pieLabels = this.hoursByProject.map((proj) => proj.name);
+  pieLabels2 = this.hoursByProject2.map((proj) => proj.name);
 
   pieData = this.hoursByProject.map((proj) => proj.hoursSpent);
+  pieData2 = this.hoursByProject2.map((proj) => proj.hoursSpent);
 
   pieColors = this.configureDefaultColours(this.pieData);
 
@@ -67,20 +74,30 @@ export class DashboardComponent implements AfterViewInit {
     ]
   }
 
+  hoursByProjectChartData2 = {
+    labels: this.pieLabels2,
+    datasets: [
+      {
+        data: this.pieData2,
+        backgroundColor: this.pieColors
+      }
+    ]
+  }
+
 
   hoursByTeamChartData = {
 
-    labels: ['Jan', 'Feb', 'Mar', 'Apr', 'May', 'Jun'],
+    labels: ['L/Q', 'DOT', 'HRP', 'SHRP', 'NED', 'PFC'],
     datasets: [
       {
-        label: 'Dev Team',
+        label: 'Untested',
         backgroundColor: DEFAULT_COLORS[0],
-        data: [65, 59, 80, 55, 67, 73]
+        data: [61, 59, 30, 55, 67, 73]
       },
       {
-        label: 'Ops Team',
+        label: 'Tested',
         backgroundColor: DEFAULT_COLORS[1],
-        data: [44, 63, 57, 90, 77, 70]
+        data: [39, 41, 70, 45, 33, 27]
       }
     ]
 
@@ -88,19 +105,19 @@ export class DashboardComponent implements AfterViewInit {
 
   hoursByTeamChartDataMixed = {
 
-    labels: ['Jan', 'Feb', 'Mar', 'Apr', 'May', 'Jun'],
+    labels: ['3/1', '3/2', '3/5', '3/6', '3/7', '3/8'],
     datasets: [
       {
-        label: 'Dev Team',
-        type: 'bar',
+        label: 'Tested',
+        type: 'line',
         backgroundColor: DEFAULT_COLORS[0],
-        data: [65, 59, 80, 55, 67, 73]
+        data: [15, 19, 20, 13, 28, 27]
       },
       {
-        label: 'Ops Team',
+        label: 'Selected',
         type: 'line',
         backgroundColor: DEFAULT_COLORS[1],
-        data: [44, 63, 57, 90, 77, 70]
+        data: [25, 26, 30, 25, 35, 33]
       }
     ]
 
