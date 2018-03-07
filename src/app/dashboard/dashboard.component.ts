@@ -27,8 +27,8 @@ export class DashboardComponent implements AfterViewInit {
   ]
 
   hoursByProject2 = [
-    { id: 1, name: 'Tested', hoursSpent: 1001 },
-    { id: 2, name: 'In Progress', hoursSpent: 58 },
+    { id: 1, name: 'In Progress', hoursSpent: 58 },
+    { id: 2, name: 'Test Complete', hoursSpent: 1001 },
   ]
 
   chartOptions = {
@@ -110,13 +110,13 @@ export class DashboardComponent implements AfterViewInit {
       {
         label: 'Tested',
         type: 'line',
-        backgroundColor: DEFAULT_COLORS[0],
+        backgroundColor: DEFAULT_COLORS[1],
         data: [15, 19, 20, 13, 28, 27]
       },
       {
         label: 'Selected',
         type: 'line',
-        backgroundColor: DEFAULT_COLORS[1],
+        backgroundColor: DEFAULT_COLORS[0],
         data: [25, 26, 30, 25, 35, 33]
       }
     ]
