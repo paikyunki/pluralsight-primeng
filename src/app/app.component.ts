@@ -36,11 +36,13 @@ export class AppComponent implements OnInit, AfterViewInit {
     this.menuItems = [
       {label: 'Dashboard', icon: 'fa-home', routerLink: ['/dashboard'], command: (event) => handleSelected(event)},
       {label: 'Select', icon: 'fa-tasks', routerLink: ['/projects'], command: (event) => handleSelected(event)},
-      {label: 'My Timesheet', icon: 'fa-clock-o', routerLink: ['/timesheet'], command: (event) => handleSelected(event)},
-      {label: 'Gather Tests', icon: 'fa-users', routerLink: ['/profile'], command: (event) => handleSelected(event)},
-      {label: 'Settings', icon: 'fa-sliders', routerLink: ['/settings'], command: (event) => handleSelected(event)},
-      {label: 'Populations', icon: 'fa-clock-o', routerLink: ['/timesheet'], command: (event) => handleSelected(event)},
-      {label: 'Manage Users', icon: 'fa-calendar', routerLink: ['/alltimes'], command: (event) => handleSelected(event)},
+      {label: 'Test Results', icon: 'fa-balance-scale', routerLink: ['/test-result'], command: (event) => handleSelected(event)},
+      {label: 'Person History', icon: 'fa-clock-o', routerLink: ['/timesheet'], command: (event) => handleSelected(event)},
+      {label: 'Populations', icon: 'fa-address-card', routerLink: ['/population'], command: (event) => handleSelected(event)},
+      {label: 'Gather Tests', icon: 'fa-cloud-upload', routerLink: ['/profile'], command: (event) => handleSelected(event)},
+      {label: 'Manage Users', icon: 'fa-female', routerLink: ['/alltimes'], command: (event) => handleSelected(event)},
+      {label: 'Reports', icon: 'fa-calendar', routerLink: ['/sami-reports'], command: (event) => handleSelected(event)},
+      {label: 'Settings', icon: 'fa-sliders', routerLink: ['/settings'], command: (event) => handleSelected(event)}
     ]
 
     this.miniMenuItems = [];

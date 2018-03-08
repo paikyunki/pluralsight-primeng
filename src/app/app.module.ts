@@ -3,7 +3,13 @@ import { NgModule } from '@angular/core';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { HttpModule } from '@angular/http';
 
-import { MenuModule, PanelModule, ChartModule, InputTextModule, ButtonModule, InputMaskModule, InputTextareaModule, EditorModule, CalendarModule, RadioButtonModule, FieldsetModule, DropdownModule, MultiSelectModule, ListboxModule, SpinnerModule, SliderModule, RatingModule, DataTableModule, ContextMenuModule, TabViewModule, DialogModule, StepsModule, ScheduleModule, TreeModule, GMapModule, DataGridModule, TooltipModule, ConfirmationService, ConfirmDialogModule, GrowlModule, DragDropModule, GalleriaModule } from 'primeng/primeng';
+import {
+  MenuModule, PanelModule, ChartModule, InputTextModule, ButtonModule, InputMaskModule, InputTextareaModule,
+  EditorModule, CalendarModule, RadioButtonModule, FieldsetModule, DropdownModule, MultiSelectModule, ListboxModule,
+  SpinnerModule, SliderModule, RatingModule, DataTableModule, ContextMenuModule, TabViewModule, DialogModule,
+  StepsModule, ScheduleModule, TreeModule, GMapModule, DataGridModule, TooltipModule, ConfirmationService,
+  ConfirmDialogModule, GrowlModule, DragDropModule, GalleriaModule, FileUploadModule
+} from 'primeng/primeng';
 
 import { AppComponent } from './app.component';
 import {RouterModule, Routes} from "@angular/router";
@@ -17,6 +23,9 @@ import { SettingsComponent } from './settings/settings.component';
 import { AlltimesComponent } from './alltimes/alltimes.component';
 import {BrowserAnimationsModule} from "@angular/platform-browser/animations";
 import { FielderrorsComponent } from './fielderrors/fielderrors.component';
+import { TestResultComponent } from './test-result/test-result.component';
+import { PopulationComponent } from './population/population.component';
+import { SamiReportsComponent } from './sami-reports/sami-reports.component';
 
 
 const appRoutes: Routes = [
@@ -27,6 +36,9 @@ const appRoutes: Routes = [
   { path: "projects", component: ProjectsComponent},
   { path: "profile", component: ProfileComponent},
   { path: "settings", component: SettingsComponent},
+  { path: "test-result", component: TestResultComponent},
+  { path: "population", component: PopulationComponent},
+  { path: "sami-reports", component: SamiReportsComponent },
 ];
 
 @NgModule({
@@ -39,7 +51,10 @@ const appRoutes: Routes = [
     AlltimesComponent,
     ProfileComponent,
     SettingsComponent,
-    FielderrorsComponent
+    FielderrorsComponent,
+    TestResultComponent,
+    PopulationComponent,
+    SamiReportsComponent
   ],
   imports: [
     BrowserModule,
@@ -78,7 +93,8 @@ const appRoutes: Routes = [
     ConfirmDialogModule,
     GrowlModule,
     DragDropModule,
-    GalleriaModule
+    GalleriaModule,
+    FileUploadModule
   ],
   providers: [ ConfirmationService ],
   bootstrap: [AppComponent]

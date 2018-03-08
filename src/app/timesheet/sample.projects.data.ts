@@ -20,7 +20,7 @@ export class SampleProjectsData {
         ]
       },
         {
-          "label": "Mobile App",
+          "label": "Techinician",
           "data": "mobile",
           "expandedIcon": "fa-folder-open",
           "collapsedIcon": "fa-folder",

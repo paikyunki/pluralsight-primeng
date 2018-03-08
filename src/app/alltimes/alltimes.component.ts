@@ -18,14 +18,17 @@ export class AlltimesComponent implements OnInit {
 
   allTimesheetData = [
 
-    { user: 'Glen', project: 'Payroll App', category: 'Backend', startTime: 1000, endTime: 1700, date: 1434243 },
-    { user: 'Karen', project: 'Agile Times', category: 'Frontend', startTime: 900, endTime: 1700, date: 1434243 },
-    { user: 'Si', project: 'Mobile App', category: 'Operations', startTime: 1100, endTime: 1700, date: 1434243 },
-    { user: 'Rohit', project: 'Agile Times', category: 'Backend', startTime: 800, endTime: 1700, date: 1434243 },
+    { user: 'Pam Carlberg', project: 'Supervisor', category: '771520', startTime: 1000, endTime: 1700, date: 1434243 },
+    { user: 'Cliff Brown', project: 'Supervisor', category: '006589', startTime: 900, endTime: 1700, date: 1434243 },
+    { user: 'Pat Fontes', project: 'Scheduler', category: '283524', startTime: 1100, endTime: 1700, date: 1434243 },
+    { user: 'Dolores Gutierrez', project: 'Scheduler', category: '62E304', startTime: 800, endTime: 1700, date: 1434243 },
+    { user: 'Rosie Gonzalez ', project: 'Technician', category: '012540', startTime: 800, endTime: 1700, date: 1434243 },
+    { user: 'Loretta Brannan ', project: 'HS Personnel', category: '004369', startTime: 800, endTime: 1700, date: 1434243 },
+    { user: 'Rick Watts ', project: 'Physican', category: '942922', startTime: 800, endTime: 1700, date: 1434243 },
 
   ];
 
-  allProjectNames = ['', 'Payroll App', 'Mobile App', 'Agile Times'];
+  allProjectNames = ['', 'Supervisor', 'Scheduler', 'Technician', 'HS Personnel', 'Physician'];
 
   allProjects = this.allProjectNames.map((proj) => {
     return { label: proj, value: proj }
@@ -72,8 +75,8 @@ export class AlltimesComponent implements OnInit {
 
   generateRandomUser(id: number) {
 
-    var names = ["Joe", "Mary", "Phil", "Karen", "Si", "Tim", "Rohit", "Jenny", "Kim", "Greg", "Danni"]
-    var allProjectNames = ['Payroll App', 'Mobile App', 'Agile Times'];
+    var names = ["Pam Carlberg", "Cliff Brown", "Pat Fontes", "Dolores Guitierrez", "Rick Watts", "Loretta Brannan"]
+    var allProjectNames = ['Supervisor', 'Scheduler', 'Technician', 'HS Personnel', 'Physician'];
     var allCategories = ['Frontend', 'Backend', 'Operations'];
 
     let newUser = {

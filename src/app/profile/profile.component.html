@@ -1,26 +1,41 @@
 <div class="profile header ui-g-12">
-    <h2>
-        Profile Info
-    </h2>
-    <h3>
-        Galleria Drag and Drop
-    </h3>
+  <h2>
+    Gather Tests
+  </h2>
+  <h3>
+    Upload tests via USB Stick
+  </h3>
 </div>
 
-<p-panel header="My Profile Picture" styleClass="profilePic" class="ui-g-12 ui-md-4" pDroppable="profilePic" (onDrop)="onPicDrop()">
+<p-panel header="Drag 'n Drop" styleClass="profilePic" class="ui-g-12 ui-md-4" pDroppable="profilePic"
+         (onDrop)="onPicDrop()">
 
-    <img id="profilePic" *ngIf="profileImage; else showDropDiv" [src]="profileImage" class="ui-g-12" />
+  <img id="profilePic" *ngIf="profileImage; else showDropDiv" [src]="profileImage" class="ui-g-12"/>
 
-    <ng-template #showDropDiv>
-        <span id="drop-message" class="ui-g-12">Drop Your Image Here</span>
-    </ng-template>
+  <ng-template #showDropDiv>
+    <span id="drop-message" class="ui-g-12">Drop Your File Here</span>
+  </ng-template>
 
 </p-panel>
 
 <div class="spacer ui-g-12 ui-md-1"></div>
+<p-panel header="Choose File to Upload" styleClass="profilePic" class="ui-g-12 ui-md-10">
+  <p-fileUpload name="myfile[]" url="./upload.php" multiple="multiple"
+                accept="image/*" maxFileSize="1000000">
+    <ng-template pTemplate="toolbar">
+      <div>Upload the File from USB Stick</div>
+    </ng-template>
+    <ng-template let-file pTemplate="file">
+      <div></div>
+    </ng-template>
+    <ng-template pTemplate="content">
+      <div></div>
+    </ng-template>
+  </p-fileUpload>
+</p-panel>
 
-<p-galleria #galleria [images]="images" class="ui-g-12 ui-md-7" panelWidth="300" panelHeight="298" [showCaption]="true" pDraggable="profilePic" dragHandle=".ui-panel-images" (onImageClicked)="onImageSelected($event)"
-(onDragStart)="onDragStart(galleria)">
-</p-galleria>
+<!--<p-galleria #galleria [images]="images" class="ui-g-12 ui-md-7" panelWidth="300" panelHeight="298" [showCaption]="true" pDraggable="profilePic" dragHandle=".ui-panel-images" (onImageClicked)="onImageSelected($event)"-->
+<!--(onDragStart)="onDragStart(galleria)">-->
+<!--</p-galleria>-->
 
-<p-growl [value]="messages"></p-growl>
+<!--<p-growl [value]="messages"></p-growl>-->

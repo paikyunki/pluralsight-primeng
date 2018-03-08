@@ -6,6 +6,17 @@ interface population {
   code: string;
 }
 
+interface testType {
+  name: string;
+  code: string;
+}
+
+interface testAuthority {
+  name: string;
+  code: string;
+}
+
+
 @Component({
   selector: 'at-projects',
   templateUrl: './projects.component.html',
@@ -19,6 +30,8 @@ export class ProjectsComponent implements OnInit {
   val: number = 15;
   daysToExclude: number = 60;
   populations: population[];
+  testTypes: testType[];
+  testAuthorities: testAuthority[];
   selectedPopulation: string;
 
   allDevs = [
@@ -44,6 +57,20 @@ export class ProjectsComponent implements OnInit {
       { name: 'HRP-NED', code: 'HRP-NED'},
       { name: 'DOT', code: 'DOT'}
   ];
+    this.testTypes =  [
+      { name: 'Pre-Employment', code: 'L/Q'},
+      { name: 'Clearance', code: 'HRP'},
+      { name: 'Reasonable Suspicion', code: 'SHRP'},
+      { name: 'Return-to-Duty', code: 'SHRP'},
+      { name: 'Follow-up/EAP', code: 'HRP-NED'},
+      { name: 'Post Accident', code: 'DOT'}
+    ];
+
+    this.testAuthorities =  [
+      { name: 'DOE', code: 'DOE'},
+      { name: 'DOT', code: 'DOT'},
+      { name: 'LLNL POLICY', code: 'LLNL'}
+    ];
 
   }
 
@@ -52,6 +79,8 @@ export class ProjectsComponent implements OnInit {
       sampleSize: ['', [Validators.required]],
       daysToExclude: ['', [Validators.required]],
       population: ['', [Validators.required]],
+      testType: ['', [Validators.required]],
+      testAuthority: ['', [Validators.required]],
       projectId: [''],
       description: ['My cool project'],
       startDate: [new Date(), Validators.required],

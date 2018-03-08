@@ -101,7 +101,7 @@
 
 
     <p-tabPanel header="&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Manual Selection&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;">
-      <p-panel header="Select an Employee for test. " class="ui-g-12">
+      <p-panel header="Select employee to be tested. " class="ui-g-12">
 
         <div class="ui-g">
           <label for="devs" class="ui-g-12 ui-md-2">Employee Name</label>
@@ -114,6 +114,40 @@
           </p-listbox>
         </div>
 
+        <!--<div class="ui-g">-->
+
+          <!--<div class="ui-inputgroup">-->
+            <!--<label for="projectId" class="ui-g-12 ui-md-3">Employee ID</label>-->
+            <!--&lt;!&ndash;<input type="text" pInputText class="ui-g-12 ui-md-5" formControlName="projectId"/>&ndash;&gt;-->
+            <!--<span class="ui-inputgroup-addon"><i class="fa fa-user"></i></span>-->
+            <!--<input type="text" pInputText >-->
+            <!--<button pButton type="submit" [disabled]="hasFormErrors()" label="Search" icon="fa-floppy-o"></button>-->
+          <!--</div>-->
+        <!--</div>-->
+
+        <div class="ui-g">
+          <label for="projectId" class="ui-g-12 ui-md-3">Employee ID</label>
+
+          <p-inputMask mask="aaaaaaaaaaaaaaaaaaaaaa" id="projectId" formControlName="projectId"
+                       class="ui-g-12 ui-md-5"></p-inputMask>
+
+          <!--<div class="ui-g-12 ui-md-5">-->
+
+          <!--<at-fielderrors [form]="projectForm" field="projectId" nicename="Project ID"></at-fielderrors>-->
+          <!--</div>-->
+        </div>
+        <div class="ui-g">
+          <label for="projectId" class="ui-g-12 ui-md-3">Authorized By</label>
+
+          <p-inputMask mask="aaaaaaaaaaaaaaaaaaaaaa" id="projectId" formControlName="projectId"
+                       class="ui-g-12 ui-md-5"></p-inputMask>
+
+          <!--<div class="ui-g-12 ui-md-5">-->
+
+          <!--<at-fielderrors [form]="projectForm" field="projectId" nicename="Project ID"></at-fielderrors>-->
+          <!--</div>-->
+        </div>
+
         <div class="ui-g">
           <label for="startDate" class="ui-g-12 ui-md-3">Scheduled Test Date</label>
           <p-calendar [showIcon]="true" id="startDate" formControlName="startDate" dateFormat="mm/dd/yy"
@@ -123,24 +157,21 @@
           </div>
         </div>
 
-        <div class="ui-g">
-          <label for="projectId" class="ui-g-12 ui-md-2">Authorized By</label>
-
-          <p-inputMask mask="aaa-999" id="projectId" formControlName="projectId" placeholder="ABC-123" slotChar="?"
-                       class="ui-g-12 ui-md-5"></p-inputMask>
-
-          <div class="ui-g-12 ui-md-5">
-
-            <at-fielderrors [form]="projectForm" field="projectId" nicename="Project ID"></at-fielderrors>
-          </div>
 
           <div class="ui-g">
             <label for="population" class="ui-g-12 ui-md-3">Test Type</label>
 
-            <p-dropdown id="population" formControlName="population" optionLabel="name" [(ngModel)]="selectedPopulation"
-                        [options]="populations" class="ui-g-12 ui-md-2"></p-dropdown>
+            <p-dropdown id="testType" formControlName="testType" optionLabel="name" [(ngModel)]="selectedPopulation"
+                        [options]="testTypes" class="ui-g-12 ui-md-2"></p-dropdown>
 
           </div>
+
+        <div class="ui-g">
+          <label for="population" class="ui-g-12 ui-md-3">Test Authority</label>
+
+          <p-dropdown id="testAuthority" formControlName="testAuthority" optionLabel="name" [(ngModel)]="selectedPopulation"
+                      [options]="testAuthorities" class="ui-g-12 ui-md-2"></p-dropdown>
+
         </div>
 
         <!--<div class="ui-g">-->
